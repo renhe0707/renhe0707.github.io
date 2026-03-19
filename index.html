@@ -139,6 +139,25 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 .modal{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:2rem}.modal.on{display:flex}.modal img{max-width:90vw;max-height:90vh;border-radius:6px}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--paper)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+body.dark{--ink:#e8e6e3;--paper:#141414;--accent:#4a9e6e;--accent-soft:rgba(74,158,110,.1);--accent2:#5b8fd4;--accent2-soft:rgba(91,143,212,.1);--muted:#aaaaaa;--border:#2a2a2a;--card:#1c1c1c}
+body.dark nav{background:rgba(20,20,20,.92)}
+body.dark ::selection{background:var(--accent)}
+body.dark .tech{background:#252525}
+body.dark .project{border-color:var(--border)}
+body.dark .anchor-card{border-color:var(--border);background:var(--card)}
+body.dark .about-photo img{border-color:var(--border)}
+body.dark .modal{background:rgba(0,0,0,.95)}
+body.dark ::-webkit-scrollbar-track{background:var(--paper)}
+body.dark ::-webkit-scrollbar-thumb{background:#333}
+body.dark .featured-tag{background:var(--accent)}
+body.dark #contact{background:#0a0a0a}
+body.dark .about-content p,body.dark .tl-desc,body.dark .project-desc{color:#b0b0b0}
+body.dark #contact .section-desc{color:rgba(255,255,255,.55)}
+body.dark .tl-desc strong{color:#e0deda}
+body.dark footer{background:#0a0a0a}
+.dark-toggle{background:none;border:1px solid var(--border);border-radius:100px;padding:.32rem .7rem;font-size:.72rem;cursor:pointer;color:var(--muted);transition:all var(--ease);display:flex;align-items:center;gap:.3rem;font-family:var(--sans)}.dark-toggle:hover{border-color:var(--ink);color:var(--ink)}
+.dark-toggle svg{width:14px;height:14px}
 </style>
 </head>
 <body>
@@ -150,14 +169,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <li><a href="#about"><span data-en>About</span><span data-cn>关于</span></a></li>
 <li><a href="#projects"><span data-en>Projects</span><span data-cn>项目</span></a></li>
 <li><a href="#experience"><span data-en>Experience</span><span data-cn>经历</span></a></li>
+<li><a href="#education"><span data-en>Education</span><span data-cn>教育</span></a></li>
 <li><a href="#contact"><span data-en>Contact</span><span data-cn>联系</span></a></li>
 </ul>
+<button class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
 <button class="lang-btn" onclick="toggleLang()">中 / EN</button>
 </div></div></nav>
 <div class="dot-nav" id="dotNav">
 <a href="#about" data-section="about"><span class="dot-label"><span data-en>About</span><span data-cn>关于</span></span><span class="dot"></span></a>
 <a href="#projects" data-section="projects"><span class="dot-label"><span data-en>Projects</span><span data-cn>项目</span></span><span class="dot"></span></a>
 <a href="#experience" data-section="experience"><span class="dot-label"><span data-en>Experience</span><span data-cn>经历</span></span><span class="dot"></span></a>
+<a href="#education" data-section="education"><span class="dot-label"><span data-en>Education</span><span data-cn>教育</span></span><span class="dot"></span></a>
 <a href="#contact" data-section="contact"><span class="dot-label"><span data-en>Contact</span><span data-cn>联系</span></span><span class="dot"></span></a>
 </div>
 
@@ -205,8 +227,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <div class="about-grid" style="margin-top:2rem">
 <div class="about-photo reveal"><img src="headshot.jpeg" alt="Robert Ren"></div>
 <div class="about-content">
-<p data-en>I combine <em>rigorous quantitative methodology</em> with clear, actionable conclusions. At <strong>Morgan Stanley Hong Kong</strong>, I built Treynor-Mazuy attribution models and automated fund screening pipelines. At <strong>Oin Auto</strong> in San Francisco, I developed ML classifiers and real-time data infrastructure.</p>
-<p data-cn>我将<em>严谨的量化方法论</em>与清晰可操作的结论相结合。在<strong>摩根士丹利香港</strong>，构建Treynor-Mazuy归因模型和自动化基金筛选管道。在旧金山<strong>Oin Auto</strong>，开发ML分类器和实时数据基础设施。</p>
+<p data-en>I bring a <em>cross-market perspective</em> to quantitative work—having built fund attribution models at <strong>Morgan Stanley Hong Kong</strong> and production ML pipelines at a <strong>San Francisco startup</strong>. Bilingual in English and Mandarin, I translate between Asian and US financial contexts to deliver research that’s both rigorous and actionable.</p>
+<p data-cn>我具备<em>跨市场视角</em>的量化研究能力——曾在<strong>摩根士丹利香港</strong>构建基金归因模型，也在<strong>硅谷初创公司</strong>落地生产级ML管道。中英双语流利，能够在亚洲与美国金融语境之间自由切换，交付兼具严谨性与可执行性的研究成果。</p>
 <div class="about-stats">
 <div><span class="about-stat-num">2</span><div class="about-stat-label" data-en>Internships</div><div class="about-stat-label" data-cn>实习</div></div>
 <div><span class="about-stat-num">7</span><div class="about-stat-label" data-en>Projects</div><div class="about-stat-label" data-cn>项目</div></div>
@@ -236,8 +258,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <div class="project-pills"><span class="tech">Python</span><span class="tech">scipy</span><span class="tech">Treynor-Mazuy</span><span class="tech">AKShare</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">10</span><span class="pm-label" data-en>Funds</span><span class="pm-label" data-cn>基金</span></div><div class="pm-item"><span class="pm-val">919</span><span class="pm-label" data-en>Trading Days</span><span class="pm-label" data-cn>交易日</span></div><div class="pm-item"><span class="pm-val">2/10</span><span class="pm-label" data-en>Sig. Alpha</span><span class="pm-label" data-cn>显著α</span></div></div>
 <div class="project-images-featured">
-<div class="pi-banner"><img src="projects/fund-analysis/01_performance_ranking.png" loading="lazy" onclick="openModal(this)"></div>
-<div class="pi-thumbs"><img src="projects/fund-analysis/03_tm_attribution.png" loading="lazy" onclick="openModal(this)"><img src="projects/fund-analysis/05_summary_table.png" loading="lazy" onclick="openModal(this)"><img src="projects/fund-analysis/06_cumulative_nav.png" loading="lazy" onclick="openModal(this)"></div></div>
+<div class="pi-banner"><img src="projects/fund-analysis/01_performance_ranking.png" alt="Fund performance ranking chart comparing 10 HK and offshore equity funds" loading="lazy" onclick="openModal(this)"></div>
+<div class="pi-thumbs"><img src="projects/fund-analysis/03_tm_attribution.png" alt="Treynor-Mazuy factor attribution analysis with 250-day rolling windows" loading="lazy" onclick="openModal(this)"><img src="projects/fund-analysis/05_summary_table.png" alt="Summary statistics table of fund screening metrics" loading="lazy" onclick="openModal(this)"><img src="projects/fund-analysis/06_cumulative_nav.png" alt="Cumulative NAV comparison across analyzed funds" loading="lazy" onclick="openModal(this)"></div></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/fund-analysis" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <div class="project reveal"><div class="project-top">
@@ -249,8 +271,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <div class="project-pills"><span class="tech">Factor Model</span><span class="tech">Backtesting</span><span class="tech">AKShare</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">31</span><span class="pm-label" data-en>Industries</span><span class="pm-label" data-cn>行业</span></div><div class="pm-item"><span class="pm-val">55.6%</span><span class="pm-label" data-en>Win Rate</span><span class="pm-label" data-cn>胜率</span></div><div class="pm-item"><span class="pm-val">+30.2%</span><span class="pm-label">2025</span></div></div>
 <div class="project-images-featured">
-<div class="pi-banner"><img src="projects/sector-rotation/01_cumulative_returns.png" loading="lazy" onclick="openModal(this)"></div>
-<div class="pi-thumbs"><img src="projects/sector-rotation/02_monthly_excess_returns.png" loading="lazy" onclick="openModal(this)"><img src="projects/sector-rotation/03_holdings_heatmap.png" loading="lazy" onclick="openModal(this)"><img src="projects/sector-rotation/06_annual_returns.png" loading="lazy" onclick="openModal(this)"></div></div>
+<div class="pi-banner"><img src="projects/sector-rotation/01_cumulative_returns.png" alt="Cumulative returns of sector rotation strategy versus CSI 300 benchmark" loading="lazy" onclick="openModal(this)"></div>
+<div class="pi-thumbs"><img src="projects/sector-rotation/02_monthly_excess_returns.png" alt="Monthly excess returns heatmap for sector rotation strategy" loading="lazy" onclick="openModal(this)"><img src="projects/sector-rotation/03_holdings_heatmap.png" alt="Holdings heatmap showing sector allocation over time" loading="lazy" onclick="openModal(this)"><img src="projects/sector-rotation/06_annual_returns.png" alt="Annual returns comparison by year" loading="lazy" onclick="openModal(this)"></div></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/sector-rotation" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <button class="toggle-more" id="toggleMore" onclick="toggleProjects()">
@@ -268,7 +290,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 </div>
 <div class="project-pills"><span class="tech">scikit-learn</span><span class="tech">Gradient Boosting</span><span class="tech">Pipeline</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">92%</span><span class="pm-label">Accuracy</span></div><div class="pm-item"><span class="pm-val">8,500+</span><span class="pm-label" data-en>Records</span><span class="pm-label" data-cn>数据量</span></div><div class="pm-item"><span class="pm-val">50K+/d</span><span class="pm-label" data-en>Throughput</span><span class="pm-label" data-cn>日处理</span></div></div>
-<div class="project-images"><img src="projects/vehicle-classification/01_model_comparison.png" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/02_confusion_matrix.png" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/03_feature_importance.png" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/05_dashboard.png" loading="lazy" onclick="openModal(this)"></div>
+<div class="project-images"><img src="projects/vehicle-classification/01_model_comparison.png" alt="Model comparison chart across classification algorithms" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/02_confusion_matrix.png" alt="Confusion matrix for Gradient Boosting classifier" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/03_feature_importance.png" alt="Feature importance rankings for vehicle telemetry variables" loading="lazy" onclick="openModal(this)"><img src="projects/vehicle-classification/05_dashboard.png" alt="Operations dashboard for fleet health monitoring" loading="lazy" onclick="openModal(this)"></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/vehicle-classification" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <div class="group-header"><span class="gh-line"></span><span class="gh-text"><span data-en>Course Projects</span><span data-cn>课程项目</span></span></div>
@@ -280,7 +302,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 </div>
 <div class="project-pills"><span class="tech">Monte Carlo</span><span class="tech">scipy</span><span class="tech">Stress Testing</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">1.03%</span><span class="pm-label">95% VaR</span></div><div class="pm-item"><span class="pm-val">50K</span><span class="pm-label" data-en>Simulations</span><span class="pm-label" data-cn>模拟次数</span></div><div class="pm-item"><span class="pm-val">3</span><span class="pm-label" data-en>Scenarios</span><span class="pm-label" data-cn>压力情景</span></div></div>
-<div class="project-images"><img src="projects/var-analysis/01_portfolio_nav.png" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/02_var_distribution.png" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/04_stress_tests.png" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/05_correlation.png" loading="lazy" onclick="openModal(this)"></div>
+<div class="project-images"><img src="projects/var-analysis/01_portfolio_nav.png" alt="Portfolio NAV time series across 5 asset classes" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/02_var_distribution.png" alt="VaR distribution from 50K Monte Carlo simulations" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/04_stress_tests.png" alt="Stress test results across COVID crash and Fed hike scenarios" loading="lazy" onclick="openModal(this)"><img src="projects/var-analysis/05_correlation.png" alt="Asset correlation heatmap for portfolio holdings" loading="lazy" onclick="openModal(this)"></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/var-analysis" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <div class="group-header"><span class="gh-line"></span><span class="gh-text"><span data-en>Independent Research</span><span data-cn>独立研究</span></span></div>
@@ -292,7 +314,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 </div>
 <div class="project-pills"><span class="tech">DCF</span><span class="tech">DuPont</span><span class="tech">Comps</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">BUY</span><span class="pm-label" data-en>Rating</span><span class="pm-label" data-cn>评级</span></div><div class="pm-item"><span class="pm-val">HK$300</span><span class="pm-label" data-en>Target</span><span class="pm-label" data-cn>目标价</span></div><div class="pm-item"><span class="pm-val">+38%</span><span class="pm-label">Upside</span></div></div>
-<div class="project-images"><img src="projects/equity-research/01_revenue_profit.png" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/04_ip_breakdown.png" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/06_dupont_roe.png" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/07_dcf_sensitivity.png" loading="lazy" onclick="openModal(this)"></div>
+<div class="project-images"><img src="projects/equity-research/01_revenue_profit.png" alt="Pop Mart revenue and profit growth trends" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/04_ip_breakdown.png" alt="IP portfolio breakdown and revenue contribution analysis" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/06_dupont_roe.png" alt="DuPont ROE decomposition analysis" loading="lazy" onclick="openModal(this)"><img src="projects/equity-research/07_dcf_sensitivity.png" alt="DCF sensitivity analysis with WACC and growth rate scenarios" loading="lazy" onclick="openModal(this)"></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/equity-research" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <div class="project reveal"><div class="project-top">
@@ -302,7 +324,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <p class="project-desc" data-cn>分析11个SPDR行业ETF三年日线，构建防御评分模型筛选最优风险调整行业。</p>
 </div>
 <div class="project-pills"><span class="tech">Python</span><span class="tech">SQL</span><span class="tech">yfinance</span></div>
-<div class="project-images"><img src="projects/sp500/correlation_heatmap.png" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/risk_return_scatter.png" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/rolling_returns.png" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/sector_dashboard.png" loading="lazy" onclick="openModal(this)"></div>
+<div class="project-images"><img src="projects/sp500/correlation_heatmap.png" alt="Correlation heatmap across 11 SPDR sector ETFs" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/risk_return_scatter.png" alt="Risk-return scatter plot for sector ETFs" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/rolling_returns.png" alt="Rolling returns comparison across sectors" loading="lazy" onclick="openModal(this)"><img src="projects/sp500/sector_dashboard.png" alt="Sector analysis dashboard with defensive scoring" loading="lazy" onclick="openModal(this)"></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/sp500-sector-analysis" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 
 <div class="project reveal"><div class="project-top">
@@ -312,7 +334,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <p class="project-desc" data-cn>12,500+笔交易分析 → KPI看板、RFM分群（791个流失风险客户）、3项留存策略预计+15%。</p>
 </div>
 <div class="project-pills"><span class="tech">Python</span><span class="tech">SQL</span><span class="tech">RFM</span><span class="tech">Cohort</span></div>
-<div class="project-images"><img src="projects/ecommerce/kpi_dashboard.png" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/cohort_retention.png" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/customer_segments.png" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/recommendations.png" loading="lazy" onclick="openModal(this)"></div>
+<div class="project-images"><img src="projects/ecommerce/kpi_dashboard.png" alt="E-commerce KPI dashboard with revenue and order metrics" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/cohort_retention.png" alt="Customer cohort retention analysis heatmap" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/customer_segments.png" alt="RFM customer segmentation visualization" loading="lazy" onclick="openModal(this)"><img src="projects/ecommerce/recommendations.png" alt="Retention strategy recommendations with projected impact" loading="lazy" onclick="openModal(this)"></div>
 <div class="project-foot"><a class="pf-link" href="https://github.com/renhe0707/ecommerce-transaction-analysis" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a></div></div>
 </div>
 </div></section>
@@ -373,6 +395,28 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 </div>
 </div></section>
 
+<section id="education" style="background:var(--paper)"><div class="section-inner">
+<div class="section-line"></div>
+<div class="section-eyebrow"><span data-en>Education</span><span data-cn>教育背景</span></div>
+<h2 class="section-heading"><span data-en>Purdue University</span><span data-cn>普渡大学</span></h2>
+<div class="timeline">
+<div class="tl-item reveal">
+<div class="tl-date"><span data-en>Expected May 2027</span><span data-cn>预计2027年5月</span></div>
+<h3><span data-en>B.S. Applied Statistics</span><span data-cn>应用统计学 学士</span></h3>
+<div class="tl-company">West Lafayette, Indiana</div>
+<p class="tl-desc" data-en><strong>Relevant Coursework:</strong> Financial Mathematics (MA 373) · Probability (STAT 416) · Long-Term Actuarial Mathematics (STAT 472) · Regression Analysis (STAT 350) · Time Series &amp; Applications (STAT 474)</p>
+<p class="tl-desc" data-cn><strong>相关课程：</strong>金融数学 (MA 373) · 概率论 (STAT 416) · 长期精算数学 (STAT 472) · 回归分析 (STAT 350) · 时间序列与应用 (STAT 474)</p>
+</div>
+<div class="tl-item reveal">
+<div class="tl-date"><span data-en>In Progress</span><span data-cn>备考中</span></div>
+<h3><span data-en>SOA Exam P — Probability</span><span data-cn>SOA Exam P — 概率论</span></h3>
+<div class="tl-company"><span data-en>Society of Actuaries</span><span data-cn>美国精算师协会</span></div>
+<p class="tl-desc" data-en>Registered for May 2026 sitting. Preparing with Coaching Actuaries study framework.</p>
+<p class="tl-desc" data-cn>已报名2026年5月场次，使用Coaching Actuaries备考。</p>
+</div>
+</div>
+</div></section>
+
 <section id="contact"><div class="section-inner">
 <div class="section-line"></div>
 <div class="section-eyebrow">Contact</div>
@@ -381,7 +425,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.25);text-align:center;paddi
 <p class="section-desc" data-cn>欢迎就量化研究、数据分析相关话题交流。</p>
 <div class="contact-row">
 <a href="mailto:robert.renhe.work@gmail.com" class="contact-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>
-<a href="https://linkedin.com/in/YOUR-LINKEDIN-ID" class="contact-pill" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+<a href="https://www.linkedin.com/in/herenrobert" class="contact-pill" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
 <a href="https://github.com/renhe0707" class="contact-pill" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
 <a href="Robert_Ren_Resume.pdf" class="contact-pill" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span data-en>Resume</span><span data-cn>简历</span></a>
 </div></div></section>
@@ -416,6 +460,9 @@ function toggleProjects(){
   if(cn)cn.textContent=isOpen?'\u6536\u8d77':'\u5c55\u5f00\u5168\u90e8 5 \u4e2a\u9879\u76ee';
   if(isOpen)wrap.querySelectorAll('.reveal:not(.visible)').forEach(function(el){revealObs.observe(el)});
 }
+
+function toggleDark(){document.body.classList.toggle('dark');var isDark=document.body.classList.contains('dark');var icon=document.querySelector('.dark-toggle svg');if(isDark){icon.innerHTML='<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';localStorage.setItem("theme","dark")}else{icon.innerHTML='<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';localStorage.setItem("theme","light")}}
+if(localStorage.getItem("theme")==="dark"){document.body.classList.add("dark");var di=document.querySelector(".dark-toggle svg");if(di)di.innerHTML='<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';}
 </script>
 </body>
 </html>
