@@ -165,10 +165,12 @@ body.dark footer{background:#0a0a0a}
 .wechat-modal img{width:240px;height:240px;border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,.3)}
 .wechat-modal p{color:rgba(255,255,255,.7);font-size:.82rem;font-family:var(--sans)}
 
-.project-conclusion{padding:.6rem 2.2rem .2rem;display:flex;align-items:baseline;gap:.5rem}
-.project-conclusion span.pc-icon{color:var(--accent);font-size:.85rem;flex-shrink:0}
-.project-conclusion p{font-size:.82rem;color:var(--accent);font-weight:500;line-height:1.6;margin:0}
-@media(max-width:640px){.project-conclusion{padding-left:1.4rem;padding-right:1.4rem}}
+.project-conclusion{margin:0 2.2rem .8rem;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 6px 6px 0;display:flex;align-items:baseline;gap:.5rem}
+.project-conclusion span.pc-icon{color:var(--accent);font-size:.75rem;font-weight:700;flex-shrink:0;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.project-conclusion p{font-size:.82rem;color:var(--ink);font-weight:500;line-height:1.5;margin:0}
+body.dark .project-conclusion{background:rgba(74,158,110,.08)}
+@media(max-width:640px){.project-conclusion{margin-left:1.4rem;margin-right:1.4rem}}
+.project-conclusion[data-cn]{display:none}
 </style>
 </head>
 <body>
@@ -272,8 +274,8 @@ body.dark footer{background:#0a0a0a}
 <p class="project-desc" data-en>Screened 10 HK/offshore equity funds using Sharpe, Sortino, Calmar, and Information Ratio. Treynor-Mazuy factor attribution (250-day rolling) to decompose selection alpha and timing beta.</p>
 <p class="project-desc" data-cn>分析10只港股/QDII基金的夏普、索提诺、卡玛和信息比率。Treynor-Mazuy归因（250日滚动）分解选股alpha与择时beta。</p>
 </div>
-<div class="project-conclusion" data-en><span class="pc-icon">→</span><p>Found 2 of 10 funds with statistically significant alpha; recommended reallocation away from closet-indexing funds.</p></div>
-<div class="project-conclusion" data-cn><span class="pc-icon">→</span><p>发现10只基金中2只具有统计显著的alpha，建议减配“壁橱指数化”基金。</p></div>
+<div class="project-conclusion" data-en><span class="pc-icon">Insight</span><p>Recommended reallocation away from closet-indexing funds.</p></div>
+<div class="project-conclusion" data-cn><span class="pc-icon">结论</span><p>建议减配“壁橱指数化”基金。</p></div>
 <div class="project-pills"><span class="tech">Python</span><span class="tech">scipy</span><span class="tech">Treynor-Mazuy</span><span class="tech">AKShare</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">10</span><span class="pm-label" data-en>Funds</span><span class="pm-label" data-cn>基金</span></div><div class="pm-item"><span class="pm-val">919</span><span class="pm-label" data-en>Trading Days</span><span class="pm-label" data-cn>交易日</span></div><div class="pm-item"><span class="pm-val">2/10</span><span class="pm-label" data-en>Sig. Alpha</span><span class="pm-label" data-cn>显著α</span></div></div>
 <div class="project-images-featured">
@@ -287,8 +289,8 @@ body.dark footer{background:#0a0a0a}
 <p class="project-desc" data-en>Monthly rotation across 31 Shenwan industries using momentum, risk-adjusted momentum, and turnover trend factors. Outperformed CSI 300 by +12.5pp in 2025.</p>
 <p class="project-desc" data-cn>基于动量、风险调整动量和成交额趋势的月频轮动策略，覆盖31个申万行业。2025年超沦深300达12.5个百分点。</p>
 </div>
-<div class="project-conclusion" data-en><span class="pc-icon">→</span><p>Strategy returned +30.2% vs CSI 300’s +17.7% in 2025; momentum-turnover composite showed strongest predictive power.</p></div>
-<div class="project-conclusion" data-cn><span class="pc-icon">→</span><p>策略在2025年回报+30.2%，超越沦深300的+17.7%；动量-成交额复合因子预测力最强。</p></div>
+<div class="project-conclusion" data-en><span class="pc-icon">Insight</span><p>Momentum-turnover composite factor showed strongest predictive power among all tested signals.</p></div>
+<div class="project-conclusion" data-cn><span class="pc-icon">结论</span><p>动量·成交额复合因子在所有测试信号中预测力最强。</p></div>
 <div class="project-pills"><span class="tech">Factor Model</span><span class="tech">Backtesting</span><span class="tech">AKShare</span></div>
 <div class="project-metrics"><div class="pm-item"><span class="pm-val">31</span><span class="pm-label" data-en>Industries</span><span class="pm-label" data-cn>行业</span></div><div class="pm-item"><span class="pm-val">55.6%</span><span class="pm-label" data-en>Win Rate</span><span class="pm-label" data-cn>胜率</span></div><div class="pm-item"><span class="pm-val">+30.2%</span><span class="pm-label">2025</span></div></div>
 <div class="project-images-featured">
